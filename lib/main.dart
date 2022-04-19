@@ -14,201 +14,35 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class PhotoView1 extends StatelessWidget{
+class PVG extends StatelessWidget {
+  List<String> images = [
+    'assets/image1.jpg',
+    'assets/image2.jpg',
+    'assets/image3.jpg',
+    'assets/image4.jpg',
+    'assets/image5.jpg',
+    'assets/image6.jpg',
+    'assets/image7.jpg',
+    'assets/image8.jpg',
+  ];
+
   @override
-  Widget build(BuildContext context){
-    final appBar = AppBar(
-      title: Text('色色柴柴卡冊'),
-      centerTitle: true,
+  Widget build(BuildContext context) {
+    return PhotoViewGallery.builder(
+      builder: (BuildContext context, int index) {
+        return PhotoViewGalleryPageOptions(
+          imageProvider: AssetImage(images[index]),
+        );
+      },
+      itemCount: images.length,
     );
-
-    final widget = Container(
-      child: PhotoView(
-        enableRotation: false,
-        imageProvider: AssetImage('assets/image1.jpg'),
-      )
-    );
-
-    final PhotoViewPage = Scaffold(
-      appBar: appBar,
-      body: widget,
-    );
-
-    return PhotoViewPage;
   }
-}
 
-class PhotoView2 extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    final appBar = AppBar(
-      title: Text('色色柴柴卡冊'),
-      centerTitle: true,
-    );
 
-    final widget = Container(
-        child: PhotoView(
-          enableRotation: false,
-          imageProvider: AssetImage('assets/image2.jpg'),
-        )
-    );
 
-    final PhotoViewPage = Scaffold(
-      appBar: appBar,
-      body: widget,
-    );
-
-    return PhotoViewPage;
-  }
-}
-
-class PhotoView3 extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    final appBar = AppBar(
-      title: Text('色色柴柴卡冊'),
-      centerTitle: true,
-    );
-
-    final widget = Container(
-        child: PhotoView(
-          enableRotation: false,
-          imageProvider: AssetImage('assets/image3.jpg'),
-        )
-    );
-
-    final PhotoViewPage = Scaffold(
-      appBar: appBar,
-      body: widget,
-    );
-
-    return PhotoViewPage;
-  }
-}
-
-class PhotoView4 extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    final appBar = AppBar(
-      title: Text('色色柴柴卡冊'),
-      centerTitle: true,
-    );
-
-    final widget = Container(
-        child: PhotoView(
-          enableRotation: false,
-          imageProvider: AssetImage('assets/image4.jpg'),
-        )
-    );
-
-    final PhotoViewPage = Scaffold(
-      appBar: appBar,
-      body: widget,
-    );
-
-    return PhotoViewPage;
-  }
-}
-
-class PhotoView5 extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    final appBar = AppBar(
-      title: Text('色色柴柴卡冊'),
-      centerTitle: true,
-    );
-
-    final widget = Container(
-        child: PhotoView(
-          enableRotation: false,
-          imageProvider: AssetImage('assets/image5.jpg'),
-        )
-    );
-
-    final PhotoViewPage = Scaffold(
-      appBar: appBar,
-      body: widget,
-    );
-
-    return PhotoViewPage;
-  }
-}
-
-class PhotoView6 extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    final appBar = AppBar(
-      title: Text('色色柴柴卡冊'),
-      centerTitle: true,
-    );
-
-    final widget = Container(
-        child: PhotoView(
-          enableRotation: false,
-          imageProvider: AssetImage('assets/image6.jpg'),
-        )
-    );
-
-    final PhotoViewPage = Scaffold(
-      appBar: appBar,
-      body: widget,
-    );
-
-    return PhotoViewPage;
-  }
-}
-
-class PhotoView7 extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    final appBar = AppBar(
-      title: Text('色色柴柴卡冊'),
-      centerTitle: true,
-    );
-
-    final widget = Container(
-        child: PhotoView(
-          enableRotation: false,
-          imageProvider: AssetImage('assets/image7.jpg'),
-        )
-    );
-
-    final PhotoViewPage = Scaffold(
-      appBar: appBar,
-      body: widget,
-    );
-
-    return PhotoViewPage;
-  }
-}
-
-class PhotoView8 extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    final appBar = AppBar(
-      title: Text('色色柴柴卡冊'),
-      centerTitle: true,
-    );
-
-    final widget = Container(
-        child: PhotoView(
-          enableRotation: false,
-          imageProvider: AssetImage('assets/image8.jpg'),
-        )
-    );
-
-    final PhotoViewPage = Scaffold(
-      appBar: appBar,
-      body: widget,
-    );
-
-    return PhotoViewPage;
-  }
 }
 
 class MyHomePage extends StatelessWidget {
-
-
   Widget build(BuildContext context) {
     final appBar = AppBar(
       title: Text('408630191 PhotoView',
@@ -222,10 +56,6 @@ class MyHomePage extends StatelessWidget {
       backgroundColor: Colors.greenAccent,
     );
 
-
-
-
-
     final widget = Center(
       child: GridView.count(
         crossAxisCount: 2,
@@ -234,7 +64,7 @@ class MyHomePage extends StatelessWidget {
           Container(
             child: RaisedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PhotoView1()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PVG()));
               },
               child: Image.asset('assets/image1.jpg'),
               color: Colors.greenAccent[100],
@@ -246,7 +76,7 @@ class MyHomePage extends StatelessWidget {
           Container(
             child: RaisedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PhotoView2()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PVG()));
               },
               child: Image.asset('assets/image2.jpg'),
               color: Colors.greenAccent[200],
@@ -258,7 +88,7 @@ class MyHomePage extends StatelessWidget {
           Container(
             child: RaisedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PhotoView3()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PVG()));
               },
               child: Image.asset('assets/image3.jpg'),
               color: Colors.greenAccent[200],
@@ -270,7 +100,7 @@ class MyHomePage extends StatelessWidget {
           Container(
             child: RaisedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PhotoView4()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PVG()));
               },
               child: Image.asset('assets/image4.jpg'),
               color: Colors.greenAccent[100],
@@ -282,7 +112,7 @@ class MyHomePage extends StatelessWidget {
           Container(
             child: RaisedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PhotoView5()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PVG()));
               },
               child: Image.asset('assets/image5.jpg'),
               color: Colors.greenAccent[100],
@@ -294,7 +124,7 @@ class MyHomePage extends StatelessWidget {
           Container(
             child: RaisedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PhotoView6()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PVG()));
               },
               child: Image.asset('assets/image6.jpg'),
               color: Colors.greenAccent[200],
@@ -306,7 +136,7 @@ class MyHomePage extends StatelessWidget {
           Container(
             child: RaisedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PhotoView7()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PVG()));
               },
               child: Image.asset('assets/image7.jpg'),
               color: Colors.greenAccent[200],
@@ -318,7 +148,7 @@ class MyHomePage extends StatelessWidget {
           Container(
             child: RaisedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PhotoView8()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PVG()));
               },
               child: Image.asset('assets/image8.jpg'),
               color: Colors.greenAccent[100],
@@ -330,16 +160,10 @@ class MyHomePage extends StatelessWidget {
       ),
     );
 
-
-
-
-
     final appHomePage = Scaffold(
       appBar: appBar,
       body: widget,
     );
-
-
     return appHomePage;
   }
 }
